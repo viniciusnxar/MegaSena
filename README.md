@@ -1,1 +1,1 @@
-"New prohect"
+"New project"
