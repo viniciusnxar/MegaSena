@@ -1,0 +1,28 @@
+.btn{
+    margin-top: 100px;
+    margin-bottom: 30px;
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    border-style: hidden;
+    width: 150px;
+    height: 50px;
+    color: #efff;
+    font-size: 14px;
+}
+.fundo{
+    background-color: #fefefe;
+    
+}
+.h1{
+    background-color: #00aa69;
+    color: #fdfdfd
+}
+.numeros{
+    height: 25px;
+    width: 25px;
+    background-color: #adc0c4;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+}
