@@ -1,8 +1,18 @@
 body {
 font-family: FuturaBold;
+margin: 0;
+padding: 0;
+justify-content: center;
 }
-
-
+header{
+    background-color: #00aa69;
+    margin-top: -21px;
+}
+.h1{
+    color: #fdfdfd;
+    height: 50px;
+    padding: 0px;
+}
 .btn{
     margin-top: 100px;
     margin-bottom: 30px;
@@ -13,14 +23,11 @@ font-family: FuturaBold;
     height: 50px;
     color: #efff;
     font-size: 14px;
+    cursor: pointer;
 }
 .fundo{
     background-color: #fefefe;
-    
-}
-.h1{
-    background-color: #00aa69;
-    color: #fdfdfd
+    pointer-events: none ;
 }
 .numeros{
     height: 25px;
@@ -30,6 +37,7 @@ font-family: FuturaBold;
     display: inline-block;
     margin-right: 20px;
     padding: 10px;
+    cursor: pointer;
 }
 @font-face {
     font-family: FuturaBold;
