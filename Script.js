@@ -2,8 +2,8 @@ var numerosMegasena = document.getElementById("divNumerosMegaSena");
 var numerosEscolhidos = [];
 var botaoJogar = document.getElementById("botaoJogar");
 
-//mudar cor de fundo de numeros ao clicar
-//se ele tiver mais de 6 numeros, dar um alert
+//Mudar cor de fundo de numeros ao clicar
+//Se ele tiver mais de 6 numeros, dar um alert
 
 numerosMegasena.addEventListener("click", function (cordefundo) {
   cordefundo.target.style.background = "#01ac66";
@@ -76,7 +76,7 @@ function verificaNumerosAcertados() {
 }
 
 //Botao Limpar/nao funciona
-//span, guarda todos os numeros na mega sena
+//Span, guarda todos os numeros na mega sena
 
 var botaoLimpar = document.getElementById("botaoLimpar");
 var span = document.getElementsByClassName("numeros");
