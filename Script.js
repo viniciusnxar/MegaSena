@@ -89,7 +89,7 @@ function lipardadosdatela() {
   resultado = "";
   acertos.innerHTML = "";
   numerosEscolhidos = [];
-  contador = "";
+  contador = 0
 }
 
 //Gerar jogo Automatico// mesma coisa do jogar
