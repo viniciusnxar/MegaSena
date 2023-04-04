@@ -1,16 +1,16 @@
-var numerosMegasena = document.getElementById("divNumerosMegaSena");
+var numerosMegasena = document.getElementById('divNumerosMegaSena');
 var numerosEscolhidos = [];
-var botaoJogar = document.getElementById("botaoJogar");
+var botaoJogar = document.getElementById('botaoJogar');
 
 //Mudar cor de fundo de numeros ao clicar
 //Se ele tiver mais de 6 numeros, dar um alert
 
-numerosMegasena.addEventListener("click", function (cordefundo) {
-  cordefundo.target.style.background = "#01ac66";
+numerosMegasena.addEventListener('click', function (cordefundo) {
+  cordefundo.target.style.background = '#01ac66';
   numerosEscolhidos.push(cordefundo.target.innerHTML);
   if (numerosEscolhidos.length > 6) {
-    alert("No máximo 6 números");
-    cordefundo.target.style.background = "#adc0c4";
+    alert('No máximo 6 números');
+    cordefundo.target.style.background = '#adc0c4';
     botaoJogar.disable = false;
     return;
   }
@@ -28,20 +28,20 @@ function validaNumerosEscolhidos() {
 //Numeros Aleatorios/Resultado
 
 var numerosSelecionados = [];
-var resultado = "";
-var NumerosSorteados = document.getElementById("NumerosSorteados");
-botaoJogar.addEventListener("click", numero_aleatorio);
+var resultado = '';
+var NumerosSorteados = document.getElementById('NumerosSorteados');
+botaoJogar.addEventListener('click', numero_aleatorio);
 function numero_aleatorio() {
-  if (resultado != "") resultado = "";
+  if (resultado != '') resultado = '';
   while (numerosSelecionados.length < 6) {
     var aleatorio = Math.floor(Math.random() * 60 + 1);
     if (numerosSelecionados.indexOf(aleatorio) == -1) {
-      resultado += aleatorio + " ";
+      resultado += aleatorio + ' ';
       numerosSelecionados.push(aleatorio);
     }
   }
   NumerosSorteados.innerHTML =
-    "Números Sorteados: " + "<b>" + resultado + "</b>";
+    'Números Sorteados: ' + '<b>' + resultado + '</b>';
   verificaNumerosAcertados();
   numerosSelecionados = [];
 }
@@ -49,7 +49,7 @@ function numero_aleatorio() {
 //Verificador de acertos// Compara os dois arrays
 
 var contador = 0;
-var acertos = document.getElementById("Acertos");
+var acertos = document.getElementById('Acertos');
 
 function verificaNumerosAcertados() {
   for (var i = 0; i < 6; i++) {
@@ -60,17 +60,17 @@ function verificaNumerosAcertados() {
     }
   }
   if (contador == 0) {
-    acertos.innerHTML = "Infelizmente, voce perdeu";
+    acertos.innerHTML = 'Infelizmente, voce perdeu';
     return;
   } else if (contador == 6) {
-    acertos.innerHTML = "Parabens voce ganhou na mega sena";
+    acertos.innerHTML = 'Parabens voce ganhou na mega sena';
     return;
   } else if (contador == 1) {
-    acertos.innerHTML = "voce acertou 1 numero";
+    acertos.innerHTML = 'voce acertou 1 numero';
     return;
   } else if (contador > 1) {
     acertos.innerHTML =
-      "Voce acertou " + contador + " numeros, continue tentando";
+      'Voce acertou ' + contador + ' numeros, continue tentando';
     return;
   }
 }
@@ -78,30 +78,32 @@ function verificaNumerosAcertados() {
 //Botao Limpar/nao funciona
 //Span, guarda todos os numeros na mega sena
 
-var botaoLimpar = document.getElementById("botaoLimpar");
-var span = document.getElementsByClassName("numeros");
-botaoLimpar.addEventListener("click", lipardadosdatela);
+
+var botaoLimpar = document.getElementById('botaoLimpar');
+var span = document.getElementsByClassName('numeros');
+botaoLimpar.addEventListener('click', lipardadosdatela);
 function lipardadosdatela() {
   for (var i = 0; i < span.length; i++) {
-    span[i].style.backgroundColor = "#adc0c4";
+    span[i].style.backgroundColor = '#adc0c4';
   }
-  NumerosSorteados.innerHTML = "";
-  resultado = "";
-  acertos.innerHTML = "";
+  NumerosSorteados.innerHTML = '';
+  resultado = '';
+  acertos.innerHTML = '';
   numerosEscolhidos = [];
-  contador = 0
+  numerosAutomaticos = [];
+  contador = 0;
 }
 
 //Gerar jogo Automatico// mesma coisa do jogar
 
 var numerosAutomaticos = [];
-var botaoGerarJogo = document.getElementById("botaoGeraJogo");
-botaoGerarJogo.addEventListener("click", gerarjogoautomaticamente);
+var botaoGerarJogo = document.getElementById('botaoGeraJogo');
+botaoGerarJogo.addEventListener('click', gerarjogoautomaticamente);
 function gerarjogoautomaticamente() {
   while (numerosAutomaticos.length < 6) {
     var aleatorio = Math.floor(Math.random() * 60 + 1);
     if (numerosAutomaticos.indexOf(aleatorio) == -1) {
-      resultado += aleatorio + " ";
+      resultado += aleatorio + ' ';
       numerosAutomaticos.push(aleatorio);
     }
   }
@@ -112,7 +114,7 @@ function gerarjogoautomaticamente() {
   for (var i = 0; i < span.length; i++) {
     for (var j = 0; j < 6; j++) {
       if (span[i].innerHTML == numerosEscolhidos[j]) {
-        span[i].style.backgroundColor = "#01ac66";
+        span[i].style.backgroundColor = '#01ac66';
       }
     }
   }
